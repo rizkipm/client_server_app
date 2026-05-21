@@ -1,4 +1,5 @@
 import 'package:client_server_app/providers/mahasiswa_provider.dart';
+import 'package:client_server_app/views/page_maps.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +27,13 @@ class _PageMahasiswaState extends State<PageMahasiswa> {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         title: Text('Data Mahasiswa'),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>
+              PageMaps()
+            ));
+          }, icon: Icon(Icons.map))
+        ],
       ),
 
       body: Consumer<MahasiswaProvider>(
